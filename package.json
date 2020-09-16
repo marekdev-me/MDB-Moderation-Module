@@ -1,0 +1,14 @@
+{
+  "name": "moderation",
+  "version": "1.0.0",
+  "description": "Official moderation module for Modular Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marek Dev",
+  "license": "MIT",
+  "mdbmodule": {
+    "alias": "moderation"
+  }
+}
