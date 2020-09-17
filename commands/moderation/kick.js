@@ -20,7 +20,7 @@ exports.run = async (bot, message, args) => {
     }
 
 
-    const userToKick = message.mentions.first();
+    const userToKick = message.mentions.members.first();
 
     // Check if user was mentioned
     if (!userToKick) {
