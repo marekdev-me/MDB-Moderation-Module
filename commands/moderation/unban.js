@@ -1,12 +1,12 @@
-const Discord = require('discord.js');
+const { Client, Message, RichEmbed } = require('discord.js');
 
 
 /**
  * Command entry point
  * 
- * @param {*} bot 
- * @param {*} message 
- * @param {*} args 
+ * @param {Client} bot 
+ * @param {Message} message 
+ * @param {Array<String>} args 
  */
 
 exports.run = async (bot, message, args) => {
@@ -45,6 +45,7 @@ exports.run = async (bot, message, args) => {
         })
 
     }).catch(() => {
+        // Inavlid userid specified
         return message.reply("Invalid user ID specified!");
     });
 

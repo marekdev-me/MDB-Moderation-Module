@@ -1,15 +1,14 @@
-const Discord = require('discord.js');
+const { Client, Message, RichEmbed } = require('discord.js');
 
 /**
  * Command entry point
  * 
- * @param {*} bot 
- * @param {*} message 
- * @param {*} args 
+ * @param {Client} bot 
+ * @param {Message} message 
+ * @param {Array<String>} args 
  */
 module.exports.run = async (bot, message, args) => {
 
-    message.channel.send(process.env.BOT_TOKEN)
     // Check if user is an administrator
     if (!message.member.hasPermission("ADMINISTRATOR")) {
         return message.reply(`You're not allowed to execute this command!`);
@@ -34,17 +33,23 @@ module.exports.run = async (bot, message, args) => {
     if (!message.guild.member(user).bannable) return message.reply("You can not ban this user because bot has not sufficient permissions!");
 
     // Ban user
-    await message.guild.ban(user);
+    await message.guild.ban(user).then((member) => {
+       
+        // Send ban confirmation embed to channel 
+        const banConfirmationEmbed = new RichEmbed()
+            .setTitle("Member Banned")
+            .setDescription(`Banned ${member.discriminator}`)
+            .setAuthor(message.author.username + "#" + message.author.discriminator, `${message.author.avatarURL}`)
+            .addField("BY", `${message.author.username} # ${message.author.discriminator}`)
+            .addField('Reason', banReason)
+            .setColor('RED')
+            .setTimestamp();
+
+        message.channel.send({
+            embed: banConfirmationEmbed
+        })
     
-
-    // Send ban confirmation embed to channel 
-    const banConfirmationEmbed = new Discord.RichEmbed()
-    .setColor('RED')
-    .setDescription(`✅ ${user.tag} has been successfully banned!`);
-
-    message.channel.send({
-        embed: banConfirmationEmbed
-    })
+    });
 
 }
 

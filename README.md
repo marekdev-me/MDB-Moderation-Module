@@ -15,11 +15,10 @@ Following commands are available:
 
 - `<prefix>ban <@user>` - Ban user by mentioning
 - `<prefix>unban <discord_user_id>` - Unabn user by Discord user ID
-
+- `<prefix>kick <@user>` - Kick user from Guild
 
 Comming Soon:
 - `<prefix>info <@user>` - Get user Discord data
-- `<prefix>kick <@user>` - Kick user from Guild
 - `<prefix>warn <@user> <reason>` - Warn user
 
 More commands will be added as I go
