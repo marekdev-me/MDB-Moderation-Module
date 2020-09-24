@@ -1,10 +1,10 @@
-const { Client, Message, RichEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 
 /**
  * 
- * @param {Client} bot 
- * @param {Message} message 
- * @param {Array<String>} args 
+ * @param bot
+ * @param message
+ * @param args
  */
 exports.run = async (bot, message, args) => {
 
@@ -49,9 +49,6 @@ exports.run = async (bot, message, args) => {
         // Invalid user ID specified
         return message.reply('ERROR: Invalid user ID specified!');
     })
-
-
-
 }
 
 

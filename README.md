@@ -16,6 +16,7 @@ Following commands are available:
 - `<prefix>ban <@user>` - Ban user by mentioning
 - `<prefix>unban <discord_user_id>` - Unabn user by Discord user ID
 - `<prefix>kick <@user>` - Kick user from Guild
+- `<prefix>purge <1 ... 100>` - Bulk delete messages from channel (min: 1, max: 100)
 
 Comming Soon:
 - `<prefix>info <@user>` - Get user Discord data

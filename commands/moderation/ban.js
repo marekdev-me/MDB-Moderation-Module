@@ -1,11 +1,11 @@
-const { Client, Message, RichEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 
 /**
  * Command entry point
  * 
- * @param {Client} bot 
- * @param {Message} message 
- * @param {Array<String>} args 
+ * @param bot
+ * @param message
+ * @param args
  */
 module.exports.run = async (bot, message, args) => {
 
@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
     const banReason = args.slice(1).join(' ');
 
     // Author of command cannot ban themself
-    if (user == message.author) return message.reply("Can not ban yourself!");
+    if (user === message.author) return message.reply("Can not ban yourself!");
 
     // OOPS no ban reason was specified
     if (!banReason) return message.reply("No reason has been specified!");

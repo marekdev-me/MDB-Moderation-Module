@@ -1,12 +1,12 @@
-const { Client, Message, RichEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 
 
 /**
  * Command entry point
  * 
- * @param {Client} bot 
- * @param {Message} message 
- * @param {Array<String>} args 
+ * @param bot
+ * @param message
+ * @param args
  */
 
 exports.run = async (bot, message, args) => {
@@ -32,7 +32,7 @@ exports.run = async (bot, message, args) => {
 
     message.guild.unban(userToUnban).then(() => {
 
-        const unabnnedEmbed = new Discord.RichEmbed()
+        const unabnnedEmbed = new RichEmbed()
         .setTitle("Member Unbanned")
         .setDescription(`Unbanned ${userToUnban} (ID)`)
         .setAuthor(message.author.username + "#" + message.author.discriminator, `${message.author.avatarURL}`)
